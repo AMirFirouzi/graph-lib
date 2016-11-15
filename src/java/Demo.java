@@ -33,17 +33,17 @@ public class Demo {
     g.addVertex("7");
     g.addVertex("8");
 
-    g.addEdge("1", "3").setWeight("200");
+    g.addEdge("1", "3").setWeight("20");
     g.addEdge("1", "4").setWeight("10");
     g.addEdge("2", "3").setWeight("10");
-    g.addEdge("2", "4").setWeight("10");
+    g.addEdge("2", "4").setWeight("21");
     g.addEdge("3", "5").setWeight("20");
     g.addEdge("3", "6").setWeight("10");
     g.addEdge("4", "5").setWeight("10");
     g.addEdge("4", "6").setWeight("20");
     g.addEdge("7", "1").setWeight("20");
     g.addEdge("7", "2").setWeight("10");
-    g.addEdge("8", "1").setWeight("10");
+    g.addEdge("8", "1").setWeight("12");
     g.addEdge("8", "2").setWeight("20");
 
 
@@ -79,7 +79,7 @@ public class Demo {
 
     Process p = null;
     try {
-      p = Runtime.getRuntime().exec("gpmetis output/metis 2");
+      p = Runtime.getRuntime().exec("gpmetis -ptype=rb output/metis 4");
       p.waitFor();
     } catch (IOException e) {
       e.printStackTrace();
